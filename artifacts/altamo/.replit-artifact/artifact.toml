@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "ALTAMO"
+version = "1.0.0"
+id = "artifacts/altamo"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23126
+
+[services.development]
+run = "pnpm --filter @workspace/altamo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/altamo", "run", "build" ]
+publicDir = "artifacts/altamo/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23126"
+BASE_PATH = "/"
