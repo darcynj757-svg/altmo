@@ -5,7 +5,8 @@ import { ShoppingBag, Heart, Search, Menu, User, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import logoCard from '@/assets/altamo-logo-card.png';
+import logoFull from '@/assets/altamo-logo-clean.png';
+import crestBadge from '@/assets/altamo-crest-clean.png';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { cart, wishlist } = useShop();
@@ -66,9 +67,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Link>
           </div>
 
-          <div className="absolute left-1/2 -translate-x-1/2 h-full py-2">
+          <div className="absolute left-1/2 -translate-x-1/2 h-full py-3">
             <Link href="/" className="h-full flex items-center">
-              <img src={logoCard} alt="ALTAMO Logo" className="h-full max-h-20 object-contain mix-blend-multiply" />
+              <img src={logoFull} alt="ALTAMO" className="h-full max-h-16 object-contain" />
             </Link>
           </div>
 
@@ -109,7 +110,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-primary text-primary-foreground py-20 mt-24 border-t border-border">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
           <div className="col-span-1 md:col-span-12 lg:col-span-5 flex flex-col items-start">
-             <img src={logoCard} alt="ALTAMO Logo" className="h-24 object-contain mb-8 mix-blend-screen invert brightness-0" style={{ filter: 'invert(1) sepia(1) saturate(0) hue-rotate(0deg) brightness(2) contrast(1)'}} />
+             <img src={crestBadge} alt="ALTAMO" className="h-24 object-contain mb-8 mix-blend-screen" />
             <p className="text-primary-foreground/70 max-w-sm leading-relaxed font-light text-sm">
               Коллекция винтажной посуды и декора. Мы находим редкие предметы с историей для вашего дома.
             </p>

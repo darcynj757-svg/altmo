@@ -5,6 +5,7 @@ import products from '@/data/products.json';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import brandSheet from '@/assets/altamo-brand-sheet.png';
+import heroMood from '@/assets/altamo-hero-mood.jpg';
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
@@ -14,7 +15,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[80vh] bg-secondary flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070')] bg-cover bg-center opacity-30 mix-blend-multiply" />
+          <div
+            className="w-full h-full bg-cover bg-center opacity-40 mix-blend-multiply"
+            style={{ backgroundImage: `url(${heroMood})` }}
+          />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
           <span className="uppercase tracking-[0.3em] text-sm mb-6 text-foreground/80">Основано в MMXXV</span>
