@@ -344,13 +344,13 @@ export default function Home() {
             </blockquote>
           </FadeUp>
           <FadeUp delay={0.3}>
-            <div className="inline-block glass px-8 py-4">
-              <Link href="/catalog">
-                <span className="text-white/80 text-[11px] uppercase tracking-[0.3em] cursor-pointer hover:text-white transition-colors">
+            <Link href="/catalog">
+              <div className="inline-block border border-white/70 bg-white/10 backdrop-blur-sm px-10 py-4 cursor-pointer hover:bg-white/20 transition-colors">
+                <span className="text-white text-[11px] uppercase tracking-[0.3em] font-medium">
                   Смотреть весь каталог →
                 </span>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </FadeUp>
         </div>
       </section>
@@ -621,16 +621,16 @@ export default function Home() {
               Первыми узнавайте о{' '}
               <span className="italic font-light">редких поступлениях</span>
             </h2>
-            <p className="text-white/45 font-light mb-10 leading-relaxed">
+            <p className="text-white/70 font-light mb-10 leading-relaxed">
               Подпишитесь на письма ALTAMO — мы пишем редко, но по делу.
             </p>
-            <div className="glass flex max-w-md mx-auto">
+            <div className="flex max-w-md mx-auto border border-white/40 bg-white/10 backdrop-blur-sm">
               <input
                 type="email"
                 placeholder="Ваш Email"
-                className="bg-transparent border-none outline-none flex-1 px-6 py-4 text-sm text-white placeholder:text-white/25"
+                className="bg-transparent border-none outline-none flex-1 px-6 py-4 text-sm text-white placeholder:text-white/55"
               />
-              <button className="px-6 py-4 text-white/60 hover:text-white text-[10px] uppercase tracking-[0.2em] transition-colors border-l border-white/10">
+              <button className="px-6 py-4 text-white text-[10px] uppercase tracking-[0.2em] transition-colors border-l border-white/40 bg-white/10 hover:bg-white/20 font-medium whitespace-nowrap">
                 Подписаться
               </button>
             </div>
