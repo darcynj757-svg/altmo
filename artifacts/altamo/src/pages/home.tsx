@@ -30,6 +30,9 @@ import keyHorizImg from '@assets/542f8d5773695d21e0e285968025034e41edd21e_178367
 import keyholeImg from '@assets/52a243dcc7a329769fe523baaf7b2dd0da7ca86f_1783679793164.png';
 import keyholeVelvetImg from '@assets/bb246febba3eef9cb8964a9d2fc8f6bb110fbd15_1783679793165.png';
 
+// Vase with eyes (transparent bg)
+import vaseEyesImg from '@assets/c2145956eaceb42c17ef9ef93c9c356c89ccd3cc_1783679793166.png';
+
 // Heraldic
 import crestImg from '@assets/197098aeb793ac905cce6d28a96494917d54816f_1783679793165.png';
 
@@ -539,11 +542,11 @@ export default function Home() {
           <SlideIn from="left">
             <div className="relative flex items-center justify-center">
               {/* Keyhole brooch on dark bg */}
-              <div className="w-full aspect-square max-w-sm mx-auto bg-[#0d0d0d] flex items-center justify-center overflow-hidden rounded-2xl">
+              <div className="w-full aspect-square max-w-sm mx-auto flex items-center justify-center overflow-hidden rounded-2xl">
                 <motion.img
-                  src={keyholeVelvetImg}
+                  src={vaseEyesImg}
                   alt="ALTAMO"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6 }}
                 />
