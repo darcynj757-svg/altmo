@@ -5,8 +5,8 @@ import { ShoppingBag, Heart, Search, Menu, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import logoBlack from '@assets/logo_black_nobg_1783694481163.png';
-import logoWhite from '@assets/logo_white_1783689786646.png';
+import logoBlack from '@assets/logo_black_nobg_1783694481163.webp';
+import logoWhite from '@assets/logo_white_1783689786646.webp';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { cart, wishlist } = useShop();

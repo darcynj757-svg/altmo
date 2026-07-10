@@ -4,14 +4,14 @@ import { Layout } from '@/components/layout';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 
-import heroImg from '@assets/e3f990286a2eef82cad6e1f7ea6de46bcefedb1f_1783679793166.png';
-import platesImg from '@assets/8c27f3e260a41a3a3362919afe04c61d1e3be61a_1783679793164.png';
-import keyholePlatesImg from '@assets/66a1acd36dde2b9954603d1fabb9c401badd09f4_1783679793165.png';
-import teacupImg from '@assets/4b981288a3538c2b778516b210d4117c70ff680f_1783679793164.png';
-import crestImg from '@assets/197098aeb793ac905cce6d28a96494917d54816f_1783679793165.png';
-import velvetImg from '@assets/bb246febba3eef9cb8964a9d2fc8f6bb110fbd15_1783679793165.png';
-import vaseImg from '@assets/60474dc4c92fe280abcfb7069a03e2c2fbf109fa_1783679793165.png';
-import logoBlack from '@assets/logo_black_nobg_1783694481163.png';
+import heroImg from '@assets/e3f990286a2eef82cad6e1f7ea6de46bcefedb1f_1783679793166.webp';
+import platesImg from '@assets/8c27f3e260a41a3a3362919afe04c61d1e3be61a_1783679793164.webp';
+import keyholePlatesImg from '@assets/66a1acd36dde2b9954603d1fabb9c401badd09f4_1783679793165.webp';
+import teacupImg from '@assets/4b981288a3538c2b778516b210d4117c70ff680f_1783679793164.webp';
+import crestImg from '@assets/197098aeb793ac905cce6d28a96494917d54816f_1783679793165.webp';
+import velvetImg from '@assets/bb246febba3eef9cb8964a9d2fc8f6bb110fbd15_1783679793165.webp';
+import vaseImg from '@assets/60474dc4c92fe280abcfb7069a03e2c2fbf109fa_1783679793165.webp';
+import logoBlack from '@assets/logo_black_nobg_1783694481163.webp';
 
 // ─── Animation wrappers ──────────────────────────────────────────────────────
 

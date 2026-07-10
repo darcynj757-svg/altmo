@@ -7,34 +7,34 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 
 // Hero & atmospheric
-import heroImg from '@assets/e3f990286a2eef82cad6e1f7ea6de46bcefedb1f_1783679793166.png';
-import keyholePlatesImg from '@assets/66a1acd36dde2b9954603d1fabb9c401badd09f4_1783679793165.png';
-import platesCollectionImg from '@assets/8c27f3e260a41a3a3362919afe04c61d1e3be61a_1783679793164.png';
+import heroImg from '@assets/e3f990286a2eef82cad6e1f7ea6de46bcefedb1f_1783679793166.webp';
+import keyholePlatesImg from '@assets/66a1acd36dde2b9954603d1fabb9c401badd09f4_1783679793165.webp';
+import platesCollectionImg from '@assets/8c27f3e260a41a3a3362919afe04c61d1e3be61a_1783679793164.webp';
 
 // Vases
-import vaseBlueBlackImg from '@assets/60474dc4c92fe280abcfb7069a03e2c2fbf109fa_1783679793165.png';
-import vaseCreamBlackImg from '@assets/b1e4948aa9a2850cf7cc86852a174a865882b8b8_1783679793165.png';
-import teacupBlackImg from '@assets/4b981288a3538c2b778516b210d4117c70ff680f_1783679793164.png';
+import vaseBlueBlackImg from '@assets/60474dc4c92fe280abcfb7069a03e2c2fbf109fa_1783679793165.webp';
+import vaseCreamBlackImg from '@assets/b1e4948aa9a2850cf7cc86852a174a865882b8b8_1783679793165.webp';
+import teacupBlackImg from '@assets/4b981288a3538c2b778516b210d4117c70ff680f_1783679793164.webp';
 
 // Cutlery
-import forkImg from '@assets/7adead752b0c6e15c55e21a2b62200b527e06a60_1783679793164.png';
-import spoonImg from '@assets/1572e47c56890da1c05318fecfff17703f691e6b_1783679793165.png';
-import knifeImg from '@assets/c450b7fc0359456efbc7c62bc671cb759686c134_1783679793166.png';
+import forkImg from '@assets/7adead752b0c6e15c55e21a2b62200b527e06a60_1783679793164.webp';
+import spoonImg from '@assets/1572e47c56890da1c05318fecfff17703f691e6b_1783679793165.webp';
+import knifeImg from '@assets/c450b7fc0359456efbc7c62bc671cb759686c134_1783679793166.webp';
 
 // Keys
-import keyOrnateImg from '@assets/8c71473387efa64f81407be5adda47e845d933e0_1783679793164.png';
-import keyPearlImg from '@assets/ede569ecabba6caf47e3f878acb6e21d83f392fd_1783679793166.png';
-import keyHorizImg from '@assets/542f8d5773695d21e0e285968025034e41edd21e_1783679793165.png';
+import keyOrnateImg from '@assets/8c71473387efa64f81407be5adda47e845d933e0_1783679793164.webp';
+import keyPearlImg from '@assets/ede569ecabba6caf47e3f878acb6e21d83f392fd_1783679793166.webp';
+import keyHorizImg from '@assets/542f8d5773695d21e0e285968025034e41edd21e_1783679793165.webp';
 
 // Keyhole
-import keyholeImg from '@assets/52a243dcc7a329769fe523baaf7b2dd0da7ca86f_1783679793164.png';
-import keyholeVelvetImg from '@assets/bb246febba3eef9cb8964a9d2fc8f6bb110fbd15_1783679793165.png';
+import keyholeImg from '@assets/52a243dcc7a329769fe523baaf7b2dd0da7ca86f_1783679793164.webp';
+import keyholeVelvetImg from '@assets/bb246febba3eef9cb8964a9d2fc8f6bb110fbd15_1783679793165.webp';
 
 // Vase with eyes (transparent bg)
-import vaseEyesImg from '@assets/c2145956eaceb42c17ef9ef93c9c356c89ccd3cc_1783679793166.png';
+import vaseEyesImg from '@assets/c2145956eaceb42c17ef9ef93c9c356c89ccd3cc_1783679793166.webp';
 
 // Heraldic
-import crestImg from '@assets/197098aeb793ac905cce6d28a96494917d54816f_1783679793165.png';
+import crestImg from '@assets/197098aeb793ac905cce6d28a96494917d54816f_1783679793165.webp';
 
 // ─── Reusable animation wrappers ────────────────────────────────────────────
 
