@@ -9,7 +9,6 @@ import Catalog from "@/pages/catalog";
 import ProductDetail from "@/pages/product";
 import Cart from "@/pages/cart";
 import Wishlist from "@/pages/wishlist";
-import Brands from "@/pages/brands";
 import Events from "@/pages/events";
 import EventDetail from "@/pages/event-detail";
 import Contacts from "@/pages/contacts";
@@ -29,7 +28,6 @@ function Router() {
       <Route path="/product/:id" component={ProductDetail} />
       <Route path="/cart" component={Cart} />
       <Route path="/wishlist" component={Wishlist} />
-      <Route path="/brands" component={Brands} />
       <Route path="/events" component={Events} />
       <Route path="/events/:id" component={EventDetail} />
       <Route path="/contacts" component={Contacts} />

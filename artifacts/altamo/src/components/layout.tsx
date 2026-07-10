@@ -44,7 +44,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <div className="flex-1 overflow-auto py-8 px-6 space-y-6">
                     <nav className="flex flex-col space-y-4 text-lg font-serif">
                       <Link href="/catalog" className="hover:text-muted-foreground transition-colors">Каталог</Link>
-                      <Link href="/brands" className="hover:text-muted-foreground transition-colors">Мануфактуры</Link>
                       <Link href="/events" className="hover:text-muted-foreground transition-colors">Мероприятия</Link>
                       <Link href="/about" className="hover:text-muted-foreground transition-colors">О нас</Link>
                       <Link href="/gift-cards" className="hover:text-muted-foreground transition-colors">Подарочные карты</Link>
@@ -64,9 +63,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className={`hidden lg:flex items-center gap-10 text-xs uppercase tracking-[0.15em] font-medium ${isHome ? 'text-white/90' : 'text-foreground'}`}>
             <Link href="/catalog" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location.startsWith('/catalog') ? 'after:scale-x-100' : ''}`}>
               Каталог
-            </Link>
-            <Link href="/brands" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location === '/brands' ? 'after:scale-x-100' : ''}`}>
-              Бренды
             </Link>
             <Link href="/events" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location.startsWith('/events') ? 'after:scale-x-100' : ''}`}>
               Мероприятия
@@ -141,7 +137,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <h4 className="font-sans text-xs uppercase tracking-widest mb-8 opacity-50">Навигация</h4>
             <ul className="space-y-4 text-sm font-light">
               <li><Link href="/catalog" className="hover:opacity-70 transition-opacity">Каталог</Link></li>
-              <li><Link href="/brands" className="hover:opacity-70 transition-opacity">Мануфактуры</Link></li>
               <li><Link href="/events" className="hover:opacity-70 transition-opacity">Мероприятия</Link></li>
               <li><Link href="/gift-cards" className="hover:opacity-70 transition-opacity">Подарочные карты</Link></li>
             </ul>
