@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'wouter';
 import { useShop } from '@/hooks/use-shop';
-import { ShoppingBag, Heart, Search, Menu, User, X } from 'lucide-react';
+import { ShoppingBag, Heart, Search, Menu, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import logoBlack from '@assets/logo_black_nobg_1783694481163.png';
 import logoWhite from '@assets/logo_white_1783689786646.png';
 
@@ -33,13 +33,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] sm:w-[400px] border-r border-border bg-background p-0">
                 <div className="flex flex-col h-full">
-                  <div className="p-4 border-b border-border flex justify-between items-center h-24">
+                  <div className="p-4 border-b border-border flex items-center h-24">
                     <span className="font-serif text-2xl font-bold tracking-widest text-primary">ALTAMO</span>
-                    <SheetClose asChild>
-                      <Button variant="ghost" size="icon" className="rounded-xl">
-                        <X className="h-5 w-5" />
-                      </Button>
-                    </SheetClose>
                   </div>
                   <div className="flex-1 overflow-auto py-8 px-6 space-y-6">
                     <nav className="flex flex-col space-y-4 text-lg font-serif">
