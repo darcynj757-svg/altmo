@@ -14,7 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
   const wishlistCount = wishlist.length;
-  const isHome = location === '/';
+  const isHome = location === '/' || location === '/about';
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background selection:bg-primary selection:text-primary-foreground">
