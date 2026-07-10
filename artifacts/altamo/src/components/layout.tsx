@@ -5,8 +5,8 @@ import { ShoppingBag, Heart, Search, Menu, User, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import logoFull from '@/assets/altamo-logo-clean.png';
-import crestBadge from '@/assets/altamo-crest-clean.png';
+import logoBlack from '@assets/logo_black_1783688781606.png';
+import logoWhite from '@assets/logo_white_1783688781605.png';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { cart, wishlist } = useShop();
@@ -75,10 +75,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="absolute left-1/2 -translate-x-1/2 h-full py-3">
             <Link href="/" className="h-full flex items-center">
               {isHome ? (
-                <span className="font-serif text-white text-xl tracking-[0.25em] font-light">ALTAMO</span>
+                <img
+                  src={logoWhite}
+                  alt="ALTAMO"
+                  className="h-full max-h-16 object-contain"
+                  style={{ mixBlendMode: 'screen' }}
+                />
               ) : (
                 <img
-                  src={logoFull}
+                  src={logoBlack}
                   alt="ALTAMO"
                   className="h-full max-h-16 object-contain"
                 />
@@ -123,7 +128,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-primary text-primary-foreground py-20 mt-24 border-t border-border">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
           <div className="col-span-1 md:col-span-12 lg:col-span-5 flex flex-col items-start">
-             <img src={crestBadge} alt="ALTAMO" className="h-24 object-contain mb-8 mix-blend-screen" />
+             <img src={logoWhite} alt="ALTAMO" className="h-24 object-contain mb-8" style={{ mixBlendMode: 'screen' }} />
             <p className="text-primary-foreground/70 max-w-sm leading-relaxed font-light text-sm">
               Коллекция винтажной посуды и декора. Мы находим редкие предметы с историей для вашего дома.
             </p>
