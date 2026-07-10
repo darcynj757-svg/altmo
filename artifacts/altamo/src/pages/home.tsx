@@ -128,7 +128,7 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative h-screen min-h-[600px] overflow-hidden flex items-center justify-center"
+        className="relative h-screen min-h-[600px] overflow-hidden flex items-center justify-center -mt-24"
       >
         {/* Parallax background */}
         <motion.div

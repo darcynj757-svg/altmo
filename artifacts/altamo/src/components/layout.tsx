@@ -14,20 +14,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
   const wishlistCount = wishlist.length;
+  const isHome = location === '/';
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background selection:bg-primary selection:text-primary-foreground">
-      <header className="sticky top-0 z-50 w-full" style={{
-        background: 'rgba(243, 238, 229, 0.55)',
-        backdropFilter: 'blur(40px) saturate(180%) brightness(1.04)',
-        WebkitBackdropFilter: 'blur(40px) saturate(180%) brightness(1.04)',
-        boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+      <header className="sticky top-0 z-50 w-full transition-colors duration-300" style={{
+        background: 'transparent',
+        backdropFilter: 'blur(32px) saturate(160%)',
+        WebkitBackdropFilter: 'blur(32px) saturate(160%)',
       }}>
         <div className="container mx-auto px-4 h-24 flex items-center justify-between">
           <div className="flex items-center gap-4 lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground hover:bg-muted/50 rounded-none">
+                <Button variant="ghost" size="icon" className={`rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
@@ -60,32 +60,40 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Sheet>
           </div>
 
-          <div className="hidden lg:flex items-center gap-10 text-xs uppercase tracking-[0.15em] font-medium">
-            <Link href="/catalog" className={`hover:text-muted-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:bg-foreground after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${location.startsWith('/catalog') ? 'after:scale-x-100' : ''}`}>
+          <div className={`hidden lg:flex items-center gap-10 text-xs uppercase tracking-[0.15em] font-medium ${isHome ? 'text-white/90' : 'text-foreground'}`}>
+            <Link href="/catalog" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location.startsWith('/catalog') ? 'after:scale-x-100' : ''}`}>
               Каталог
             </Link>
-            <Link href="/brands" className={`hover:text-muted-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:bg-foreground after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${location === '/brands' ? 'after:scale-x-100' : ''}`}>
+            <Link href="/brands" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location === '/brands' ? 'after:scale-x-100' : ''}`}>
               Бренды
             </Link>
-            <Link href="/events" className={`hover:text-muted-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:bg-foreground after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${location.startsWith('/events') ? 'after:scale-x-100' : ''}`}>
+            <Link href="/events" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location.startsWith('/events') ? 'after:scale-x-100' : ''}`}>
               Мероприятия
             </Link>
           </div>
 
           <div className="absolute left-1/2 -translate-x-1/2 h-full py-3">
             <Link href="/" className="h-full flex items-center">
-              <img src={logoFull} alt="ALTAMO" className="h-full max-h-16 object-contain" />
+              {isHome ? (
+                <span className="font-serif text-white text-xl tracking-[0.25em] font-light">ALTAMO</span>
+              ) : (
+                <img
+                  src={logoFull}
+                  alt="ALTAMO"
+                  className="h-full max-h-16 object-contain"
+                />
+              )}
             </Link>
           </div>
 
           <div className="flex items-center gap-2">
             <Link href="/login">
-              <Button variant="ghost" size="icon" className="hidden lg:flex text-foreground hover:bg-muted/50 rounded-none">
+              <Button variant="ghost" size="icon" className={`hidden lg:flex rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                 <User className="h-5 w-5 stroke-[1.5]" />
               </Button>
             </Link>
             <Link href="/wishlist">
-              <Button variant="ghost" size="icon" className="relative text-foreground hover:bg-muted/50 rounded-none">
+              <Button variant="ghost" size="icon" className={`relative rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                 <Heart className="h-5 w-5 stroke-[1.5]" />
                 {wishlistCount > 0 && (
                   <Badge className="absolute top-0 right-0 h-4 min-w-4 px-1 flex items-center justify-center rounded-none bg-primary text-primary-foreground text-[9px] font-medium -translate-y-1/3 translate-x-1/3 border-none">
@@ -95,7 +103,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </Button>
             </Link>
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative text-foreground hover:bg-muted/50 rounded-none">
+              <Button variant="ghost" size="icon" className={`relative rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                 <ShoppingBag className="h-5 w-5 stroke-[1.5]" />
                 {cartCount > 0 && (
                   <Badge className="absolute top-0 right-0 h-4 min-w-4 px-1 flex items-center justify-center rounded-none bg-primary text-primary-foreground text-[9px] font-medium -translate-y-1/3 translate-x-1/3 border-none">
