@@ -19,9 +19,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background selection:bg-primary selection:text-primary-foreground">
       <header className="sticky top-0 z-50 w-full transition-colors duration-300" style={{
-        background: 'transparent',
+        background: isHome ? 'rgba(0, 0, 0, 0.30)' : 'rgba(243, 238, 229, 0.65)',
         backdropFilter: 'blur(32px) saturate(160%)',
         WebkitBackdropFilter: 'blur(32px) saturate(160%)',
+        borderBottom: isHome ? '1px solid rgba(255, 255, 255, 0.09)' : '1px solid rgba(255, 255, 255, 0.50)',
+        boxShadow: isHome
+          ? '0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.10)'
+          : '0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
       }}>
         <div className="container mx-auto px-4 h-24 flex items-center justify-between">
           <div className="flex items-center gap-4 lg:hidden">
