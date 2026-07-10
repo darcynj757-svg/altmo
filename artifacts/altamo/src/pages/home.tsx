@@ -353,8 +353,8 @@ export default function Home() {
       </section>
 
       {/* ── CUTLERY FLOAT ────────────────────────────────────────────────── */}
-      <section className="bg-[#050505] py-28 overflow-hidden">
-        <div className="container mx-auto px-4 mb-16">
+      <section className="bg-[#050505] py-16 overflow-hidden">
+        <div className="container mx-auto px-4 mb-10">
           <FadeUp>
             <span className="text-white/25 text-[10px] uppercase tracking-[0.35em] block mb-4">
               Столовые приборы
@@ -366,29 +366,43 @@ export default function Home() {
           </FadeUp>
         </div>
 
-        <div className="flex justify-center items-end gap-0 md:gap-8 overflow-hidden">
+        <div className="max-w-2xl mx-auto px-8 flex flex-col gap-5">
           {[
-            { src: forkImg, delay: 0, rotate: -3, label: 'Вилка' },
-            { src: spoonImg, delay: 0.15, rotate: 0, label: 'Ложка' },
-            { src: knifeImg, delay: 0.3, rotate: 3, label: 'Нож' },
-          ].map(({ src, delay, rotate, label }) => (
+            { src: forkImg, delay: 0, label: 'Вилка' },
+            { src: spoonImg, delay: 0.15, label: 'Ложка' },
+            { src: knifeImg, delay: 0.3, label: 'Нож' },
+          ].map(({ src, delay, label }) => (
             <motion.div
               key={label}
-              className="flex-1 max-w-[220px] flex flex-col items-center gap-6"
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
+              className="flex items-center gap-6"
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 1.0, delay, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <motion.img
-                src={src}
-                alt={label}
-                className="w-full object-contain"
-                style={{ rotate }}
-                whileHover={{ scale: 1.04, rotate: 0 }}
+              <motion.div
+                className="relative flex-shrink-0"
+                style={{ width: '320px', height: '80px', overflow: 'hidden' }}
+                whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.5 }}
-              />
-              <span className="text-white/25 text-[9px] uppercase tracking-[0.3em]">
+              >
+                <img
+                  src={src}
+                  alt={label}
+                  style={{
+                    position: 'absolute',
+                    width: '80px',
+                    height: '320px',
+                    left: '120px',
+                    top: '-120px',
+                    transform: 'rotate(90deg)',
+                    transformOrigin: '50% 50%',
+                    objectFit: 'contain',
+                  }}
+                />
+              </motion.div>
+              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-white/25 text-[9px] uppercase tracking-[0.3em] flex-shrink-0">
                 {label}
               </span>
             </motion.div>
