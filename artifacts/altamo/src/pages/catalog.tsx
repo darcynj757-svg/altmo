@@ -3,6 +3,7 @@ import { useLocation, Link } from 'wouter';
 import { Layout } from '@/components/layout';
 import { ProductCard } from '@/components/product-card';
 import products from '@/data/products.json';
+import { noBgProducts } from '@/data/product-images';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -39,6 +40,7 @@ export default function Catalog({ params }: { params?: { category?: string } }) 
   };
 
   const filteredProducts = products.filter(p => {
+    if (noBgProducts.has(p.id)) return false;
     if (categoryFilter && p.category.toLowerCase() !== categoryFilter.toLowerCase() && p.subcategory.toLowerCase() !== categoryFilter.toLowerCase()) return false;
     if (search && !p.name.toLowerCase().includes(search.toLowerCase()) && !p.brand.toLowerCase().includes(search.toLowerCase())) return false;
     if (selectedBrands.length > 0 && !selectedBrands.includes(p.brand)) return false;
@@ -65,12 +67,12 @@ export default function Catalog({ params }: { params?: { category?: string } }) 
               placeholder="Поиск..." 
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="rounded-none border-border bg-transparent w-full sm:w-64 h-10"
+              className="rounded-xl border-border bg-transparent w-full sm:w-64 h-10"
             />
             <select 
               value={sort} 
               onChange={e => setSort(e.target.value)}
-              className="h-10 px-4 py-2 border border-border bg-transparent rounded-none text-sm focus:outline-none focus:ring-1 focus:ring-primary uppercase tracking-widest text-xs min-w-[200px]"
+              className="h-10 px-4 py-2 border border-border bg-transparent rounded-xl text-sm focus:outline-none focus:ring-1 focus:ring-primary uppercase tracking-widest text-xs min-w-[200px]"
             >
               <option value="newest">Новые поступления</option>
               <option value="price-asc">Сначала дешевле</option>
@@ -104,7 +106,7 @@ export default function Catalog({ params }: { params?: { category?: string } }) 
                           id={`brand-${brand}`} 
                           checked={selectedBrands.includes(brand)}
                           onCheckedChange={() => toggleFilter(brand, selectedBrands, setSelectedBrands)}
-                          className="rounded-none border-border data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                          className="rounded-md border-border data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                         />
                         <Label htmlFor={`brand-${brand}`} className="text-sm font-light cursor-pointer leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                           {brand}
@@ -125,7 +127,7 @@ export default function Catalog({ params }: { params?: { category?: string } }) 
                           id={`mat-${mat}`} 
                           checked={selectedMaterials.includes(mat)}
                           onCheckedChange={() => toggleFilter(mat, selectedMaterials, setSelectedMaterials)}
-                          className="rounded-none border-border data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                          className="rounded-md border-border data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                         />
                         <Label htmlFor={`mat-${mat}`} className="text-sm font-light cursor-pointer leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                           {mat}
@@ -147,9 +149,9 @@ export default function Catalog({ params }: { params?: { category?: string } }) 
                 ))}
               </div>
             ) : (
-              <div className="py-24 text-center bg-secondary/50 border border-border">
+              <div className="py-24 text-center bg-secondary/50 border border-border rounded-2xl">
                 <p className="text-muted-foreground mb-6 font-light">По вашему запросу ничего не найдено.</p>
-                <Button variant="outline" className="rounded-none uppercase tracking-widest text-xs h-12 px-8 bg-transparent" onClick={() => {
+                <Button variant="outline" className="rounded-xl uppercase tracking-widest text-xs h-12 px-8 bg-transparent" onClick={() => {
                   setSearch(''); 
                   setSelectedBrands([]);
                   setSelectedMaterials([]);

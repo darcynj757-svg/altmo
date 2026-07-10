@@ -27,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-4 lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={`rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
+                <Button variant="ghost" size="icon" className={`rounded-xl ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
@@ -36,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <div className="p-4 border-b border-border flex justify-between items-center h-24">
                     <span className="font-serif text-2xl font-bold tracking-widest text-primary">ALTAMO</span>
                     <SheetClose asChild>
-                      <Button variant="ghost" size="icon" className="rounded-none">
+                      <Button variant="ghost" size="icon" className="rounded-xl">
                         <X className="h-5 w-5" />
                       </Button>
                     </SheetClose>
@@ -93,12 +93,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="flex items-center gap-2">
             <Link href="/login">
-              <Button variant="ghost" size="icon" className={`hidden lg:flex rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
+              <Button variant="ghost" size="icon" className={`hidden lg:flex rounded-xl ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                 <User className="h-5 w-5 stroke-[1.5]" />
               </Button>
             </Link>
             <Link href="/wishlist">
-              <Button variant="ghost" size="icon" className={`relative rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
+              <Button variant="ghost" size="icon" className={`relative rounded-xl ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                 <Heart className="h-5 w-5 stroke-[1.5]" />
                 {wishlistCount > 0 && (
                   <Badge className="absolute top-0 right-0 h-4 min-w-4 px-1 flex items-center justify-center rounded-none bg-primary text-primary-foreground text-[9px] font-medium -translate-y-1/3 translate-x-1/3 border-none">
@@ -108,7 +108,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </Button>
             </Link>
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className={`relative rounded-none ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
+              <Button variant="ghost" size="icon" className={`relative rounded-xl ${isHome ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-muted/50'}`}>
                 <ShoppingBag className="h-5 w-5 stroke-[1.5]" />
                 {cartCount > 0 && (
                   <Badge className="absolute top-0 right-0 h-4 min-w-4 px-1 flex items-center justify-center rounded-none bg-primary text-primary-foreground text-[9px] font-medium -translate-y-1/3 translate-x-1/3 border-none">

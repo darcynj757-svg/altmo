@@ -38,7 +38,7 @@ export function ProductCard({ product }: ProductCardProps) {
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <div
-        className={`relative aspect-square overflow-hidden ${
+        className={`relative aspect-square overflow-hidden rounded-2xl ${
           isDark ? 'bg-[#0a0a0a]' : 'bg-secondary/20'
         }`}
       >
@@ -71,7 +71,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out z-10">
           <Button
-            className="w-full glass-dark text-white hover:bg-white/20 border-white/20 rounded-none uppercase tracking-widest text-[10px] h-11 font-medium"
+            className="w-full glass-dark text-white hover:bg-white/20 border-white/20 rounded-xl uppercase tracking-widest text-[10px] h-11 font-medium"
             onClick={() => addToCart(product.id)}
           >
             В корзину
