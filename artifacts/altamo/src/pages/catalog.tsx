@@ -3,7 +3,6 @@ import { useLocation, Link } from 'wouter';
 import { Layout } from '@/components/layout';
 import { ProductCard } from '@/components/product-card';
 import products from '@/data/products.json';
-import { noBgProducts } from '@/data/product-images';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -40,7 +39,6 @@ export default function Catalog({ params }: { params?: { category?: string } }) 
   };
 
   const filteredProducts = products.filter(p => {
-    if (noBgProducts.has(p.id)) return false;
     if (categoryFilter && p.category.toLowerCase() !== categoryFilter.toLowerCase() && p.subcategory.toLowerCase() !== categoryFilter.toLowerCase()) return false;
     if (search && !p.name.toLowerCase().includes(search.toLowerCase()) && !p.brand.toLowerCase().includes(search.toLowerCase())) return false;
     if (selectedBrands.length > 0 && !selectedBrands.includes(p.brand)) return false;

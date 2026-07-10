@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 import { Layout } from '@/components/layout';
 import products from '@/data/products.json';
@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useShop } from '@/hooks/use-shop';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Heart } from 'lucide-react';
+import { productImages, darkBgProducts } from '@/data/product-images';
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
   const [, setLocation] = useLocation();
@@ -25,7 +26,13 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     );
   }
 
+  const [activeImg, setActiveImg] = useState(0);
   const isWishlisted = wishlist.includes(product.id);
+  const mainImage = productImages[product.id];
+  const isDark = darkBgProducts.has(product.id);
+  // Show up to 3 thumbnails (cycling through nearby product images for variety)
+  const thumbIds = [product.id, ...Object.keys(productImages).filter(k => k !== product.id).slice(0, 2)];
+  const thumbImages = thumbIds.map(id => productImages[id]).filter(Boolean);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', maximumFractionDigits: 0 }).format(price);
@@ -37,16 +44,31 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
           {/* Image Gallery */}
           <div className="space-y-4">
-            <div className="aspect-square bg-muted w-full relative">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-serif text-2xl">
-                ALTAMO
+            <div className={`aspect-square w-full relative overflow-hidden ${isDark ? 'bg-[#0a0a0a]' : 'bg-muted'}`}>
+              {mainImage ? (
+                <img
+                  src={thumbImages[activeImg] ?? mainImage}
+                  alt={product.name}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-serif text-2xl">ALTAMO</div>
+              )}
+            </div>
+            {thumbImages.length > 1 && (
+              <div className="grid grid-cols-3 gap-4">
+                {thumbImages.map((src, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImg(i)}
+                    className={`aspect-square overflow-hidden border-2 transition-colors ${activeImg === i ? 'border-primary' : 'border-transparent'} ${isDark ? 'bg-[#0a0a0a]' : 'bg-muted'}`}
+                    aria-label={`Фото ${i + 1}`}
+                  >
+                    <img src={src} alt="" className="w-full h-full object-contain" />
+                  </button>
+                ))}
               </div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="aspect-square bg-muted/80"></div>
-              <div className="aspect-square bg-muted/80"></div>
-              <div className="aspect-square bg-muted/80"></div>
-            </div>
+            )}
           </div>
 
           {/* Details */}

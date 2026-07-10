@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layout } from '@/components/layout';
 import { useShop } from '@/hooks/use-shop';
 import products from '@/data/products.json';
+import { productImages, darkBgProducts } from '@/data/product-images';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -9,7 +10,7 @@ import { Link } from 'wouter';
 import { Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
 
 export default function Cart() {
-  const { cart, updateQuantity, removeFromCart } = useShop();
+  const { cart, updateQuantity, removeFromCart, clearCart } = useShop();
   const [step, setStep] = useState<'cart' | 'checkout' | 'success'>('cart');
 
   const cartItems = cart.map(item => {
@@ -27,6 +28,7 @@ export default function Cart() {
 
   const handleCheckout = (e: React.FormEvent) => {
     e.preventDefault();
+    clearCart();
     setStep('success');
   };
 
@@ -80,7 +82,11 @@ export default function Cart() {
                     <div key={item.id} className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pb-8 border-b border-border">
                       <div className="md:col-span-6 flex gap-6">
                         <Link href={`/product/${item.product.id}`}>
-                          <div className="w-24 h-24 bg-muted shrink-0 cursor-pointer" />
+                          <div className={`w-24 h-24 shrink-0 cursor-pointer overflow-hidden ${darkBgProducts.has(item.product.id) ? 'bg-[#0a0a0a]' : 'bg-muted'}`}>
+                            {productImages[item.product.id] && (
+                              <img src={productImages[item.product.id]} alt={item.product.name} className="w-full h-full object-contain" />
+                            )}
+                          </div>
                         </Link>
                         <div className="flex flex-col justify-center">
                           <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{item.product.brand}</span>

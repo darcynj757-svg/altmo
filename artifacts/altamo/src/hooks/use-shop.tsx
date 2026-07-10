@@ -12,6 +12,7 @@ type ShopContextType = {
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   toggleWishlist: (id: string) => void;
+  clearCart: () => void;
 };
 
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
@@ -68,8 +69,12 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
     );
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
-    <ShopContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, updateQuantity, toggleWishlist }}>
+    <ShopContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, updateQuantity, toggleWishlist, clearCart }}>
       {children}
     </ShopContext.Provider>
   );
