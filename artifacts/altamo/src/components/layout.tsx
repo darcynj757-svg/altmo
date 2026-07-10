@@ -120,7 +120,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      <footer className="bg-primary text-primary-foreground py-20 mt-24 border-t border-border">
+      <footer className="bg-primary text-primary-foreground py-20 border-t border-border">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
           <div className="col-span-1 md:col-span-12 lg:col-span-5 flex flex-col items-start">
              <img src={logoWhite} alt="ALTAMO" className="h-24 object-contain mb-8" style={{ mixBlendMode: 'screen' }} />
