@@ -1,6 +1,5 @@
 import React from 'react';
 import { Layout } from '@/components/layout';
-import brandSheet from '@/assets/altamo-brand-sheet.png';
 
 export default function Contacts() {
   return (
@@ -34,9 +33,16 @@ export default function Contacts() {
             </div>
           </div>
 
-          <div className="aspect-[3/4] bg-muted/50 p-8 flex items-center justify-center relative">
-             <img src={brandSheet} alt="ALTAMO Space" className="max-w-full max-h-full object-contain mix-blend-multiply" />
-             <div className="absolute inset-0 ring-1 ring-border/50 ring-offset-8 ring-offset-background m-8 pointer-events-none" />
+          <div className="overflow-hidden rounded-2xl" style={{ height: '480px' }}>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?text=Москва%2C+Спиридоньевский+переулок%2C+9&z=16&l=map"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              title="ALTAMO на карте"
+              className="w-full h-full"
+            />
           </div>
         </div>
 
