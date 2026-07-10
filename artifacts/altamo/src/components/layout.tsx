@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import logoBlack from '@assets/logo_black_1783688781606.png';
-import logoWhite from '@assets/logo_white_1783688781605.png';
+import logoWhite from '@assets/logo_white_1783689786646.png';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { cart, wishlist } = useShop();
