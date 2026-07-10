@@ -16,6 +16,7 @@ import Contacts from "@/pages/contacts";
 import PaymentDelivery from "@/pages/payment-delivery";
 import GiftCards from "@/pages/gift-cards";
 import Login from "@/pages/login";
+import About from "@/pages/about";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/payment-delivery" component={PaymentDelivery} />
       <Route path="/gift-cards" component={GiftCards} />
       <Route path="/login" component={Login} />
+      <Route path="/about" component={About} />
       <Route component={NotFound} />
     </Switch>
   );

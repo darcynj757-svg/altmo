@@ -46,6 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                       <Link href="/catalog" className="hover:text-muted-foreground transition-colors">Каталог</Link>
                       <Link href="/brands" className="hover:text-muted-foreground transition-colors">Мануфактуры</Link>
                       <Link href="/events" className="hover:text-muted-foreground transition-colors">Мероприятия</Link>
+                      <Link href="/about" className="hover:text-muted-foreground transition-colors">О нас</Link>
                       <Link href="/gift-cards" className="hover:text-muted-foreground transition-colors">Подарочные карты</Link>
                     </nav>
                     <div className="h-px bg-border w-full" />
@@ -69,6 +70,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Link>
             <Link href="/events" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location.startsWith('/events') ? 'after:scale-x-100' : ''}`}>
               Мероприятия
+            </Link>
+            <Link href="/about" className={`transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-px after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${isHome ? 'hover:text-white/60 after:bg-white' : 'hover:text-muted-foreground after:bg-foreground'} ${location === '/about' ? 'after:scale-x-100' : ''}`}>
+              О нас
             </Link>
           </div>
 
@@ -145,6 +149,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="col-span-1 md:col-span-4 lg:col-span-2">
             <h4 className="font-sans text-xs uppercase tracking-widest mb-8 opacity-50">Информация</h4>
             <ul className="space-y-4 text-sm font-light">
+              <li><Link href="/about" className="hover:opacity-70 transition-opacity">О нас</Link></li>
               <li><Link href="/payment-delivery" className="hover:opacity-70 transition-opacity">Оплата и доставка</Link></li>
               <li><Link href="/contacts" className="hover:opacity-70 transition-opacity">Контакты</Link></li>
               <li><Link href="/login" className="hover:opacity-70 transition-opacity">Личный кабинет</Link></li>
