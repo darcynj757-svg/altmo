@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Layout } from '@/components/layout';
 import { Link } from 'wouter';
@@ -97,6 +97,8 @@ const values = [
 // ─── About Page ───────────────────────────────────────────────────────────────
 
 export default function About() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
   const heroRef = useRef(null);
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
