@@ -18,19 +18,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "ALTAMO Frontend"
-
-[[workflows.workflow]]
-name = "ALTAMO Frontend"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "PORT=5173 BASE_PATH=/ pnpm --filter @workspace/altamo run dev"
-waitForPort = 5173
-
-[workflows.workflow.metadata]
-outputType = "webview"
+args = "artifacts/altamo: web"
 
 [agent]
 stack = "PNPM_WORKSPACE"
