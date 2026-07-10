@@ -86,6 +86,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   src={logoBlack}
                   alt="ALTAMO"
                   className="h-full max-h-16 object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
                 />
               )}
             </Link>
