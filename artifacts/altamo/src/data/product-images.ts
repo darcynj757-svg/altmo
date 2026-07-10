@@ -45,7 +45,7 @@ export const productImages: Record<string, string> = {
 };
 
 // Images that were photographed on black backgrounds
-export const darkBgProducts = new Set(['1', '2', '3', '4', '6', '8', '11', '14', '15', '16', '17', '18', '19', '20', '22', '24']);
+export const darkBgProducts = new Set(['1', '2', '3', '4', '6', '8', '11', '14', '15', '16', '18', '19', '20', '22', '24']);
 
 // Images with transparent/no background — excluded from catalog grid
-export const noBgProducts = new Set(['5', '7', '9', '10', '13', '21', '23']);
+export const noBgProducts = new Set(['5', '7', '9', '10', '13', '17', '21', '23']);
