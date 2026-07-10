@@ -539,7 +539,7 @@ export default function Home() {
           <SlideIn from="left">
             <div className="relative flex items-center justify-center">
               {/* Keyhole brooch on dark bg */}
-              <div className="w-full aspect-square max-w-sm mx-auto bg-[#0d0d0d] flex items-center justify-center overflow-hidden">
+              <div className="w-full aspect-square max-w-sm mx-auto bg-[#0d0d0d] flex items-center justify-center overflow-hidden rounded-2xl">
                 <motion.img
                   src={keyholeVelvetImg}
                   alt="ALTAMO"
@@ -548,14 +548,6 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                 />
               </div>
-              {/* Floating crest */}
-              <motion.img
-                src={crestImg}
-                alt="Герб ALTAMO"
-                className="absolute -top-8 -right-8 w-28 h-28 object-contain"
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              />
             </div>
           </SlideIn>
 
