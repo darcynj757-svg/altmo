@@ -579,7 +579,7 @@ export default function Home() {
             </FadeUp>
             <FadeUp delay={0.4}>
               <div className="flex gap-4">
-                <Link href="/contacts">
+                <Link href="/about">
                   <Button
                     variant="outline"
                     className="rounded-none uppercase tracking-[0.2em] text-[10px] h-12 px-8"
